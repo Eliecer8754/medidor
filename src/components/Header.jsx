@@ -9,7 +9,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md sticky top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-25">
         <div className="flex w-50 h-full justify-center items-center">
           <img src={logo} alt="" className='w-20 h-20 rounded-full mr-4' />
