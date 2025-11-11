@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Header } from "./components/Header";
 import protector from "./assets/protector.png";
+// Importar las imágenes para los productos
+import smartPlug from "./assets/smartPlug.png";
+import sensorTemp from "./assets/smartTemp.png";
+import energyHub from "./assets/smartHub.png";
 
 function App() {
   const [mostrarProductos, setMostrarProductos] = useState(false);
@@ -10,16 +14,19 @@ function App() {
       nombre: "Smart Plug SPE200",
       descripcion: "Controla y mide tu consumo eléctrico desde el móvil.",
       precio: "$29.99",
+      imagen: smartPlug,
     },
     {
       nombre: "Smart Sensor Temp+",
       descripcion: "Monitorea temperatura y humedad en tiempo real.",
       precio: "$24.99",
+      imagen: sensorTemp,
     },
     {
       nombre: "Smart Energy Hub",
       descripcion: "Administra múltiples dispositivos IoT desde un solo punto.",
       precio: "$49.99",
+      imagen: energyHub,
     },
   ];
 
@@ -58,8 +65,13 @@ function App() {
             {productos.map((p, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition"
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition flex flex-col items-center"
               >
+                <img 
+                  src={p.imagen} 
+                  alt={p.nombre}
+                  className="w-32 h-32 object-contain mb-4"
+                />
                 <h3 className="text-2xl font-semibold mb-2">{p.nombre}</h3>
                 <p className="text-gray-600 mb-4">{p.descripcion}</p>
                 <span className="text-blue-700 font-bold text-xl">
